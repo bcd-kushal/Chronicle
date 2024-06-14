@@ -1,0 +1,30 @@
+.blogArticle h1 {
+    display: block;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.blogArticle h2 {
+    display: block;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
+    margin: 32px 0 14px ;
+}
+
+.blogArticle p {
+    margin: 0 0 24px;
+}
+
+.blogArticle a {
+    color: #3b82f6;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.blogArticle a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
