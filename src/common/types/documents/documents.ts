@@ -1,0 +1,10 @@
+export type BlogAtomicDataDocument = { title: string, thumbnail: ImageDocument, id: string, createdAt: Date }
+export type BlogCardDataDocument = BlogAtomicDataDocument & { description: string, metrics: BlogMetricsType, tag: TagDocument }
+export type BlogCommentsDocument = { count: number, data: CommentDocument[] }
+export type BlogFullDataDocument = BlogCardDataDocument & { fullArticle: string, relatedBlogs: BlogAtomicDataDocument[] }
+export type BlogMetricsType = { comments: number, likes: number, views: number }
+export type CommentDocument = { comment: string, reader: { id: string, details?: PartialViewerDocument } }
+export type ImageDocument = { alt: string, url: string | undefined }
+export type PartialViewerDocument = { username: string, pfp: ImageDocument }
+export type TagDocument = { label: string }
+export type ViewerDocument = PartialViewerDocument & { id: string, password: string, likes: { id: string, title: string, thumbnail: ImageDocument }, comments: { id: string, title: string, thumbnail: ImageDocument, comment: string, createdAt: Date } } & ({ email: string } | { mobile: string } | { email: string, mobile: string })
