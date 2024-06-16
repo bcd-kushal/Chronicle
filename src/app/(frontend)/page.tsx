@@ -1,14 +1,33 @@
-import styles from "@/decorators/blogData.module.css"
+import AllBlogs from "@/components/(frontend)/AllBlogs/AllBlogs"
+import CategoryTabs from "@/components/(frontend)/CategoryTabs/CategoryTabs"
+import FeaturedBlogs from "@/components/(frontend)/FeaturedBlogs/FeaturedBlogs"
+import { FeaturedBlogsType } from "@/components/(frontend)/FeaturedBlogs/utils/types"
+import RecentlyRead from "@/components/(frontend)/RecentlyRead/RecentlyRead"
+import { RecentlyReadDataType } from "@/components/(frontend)/RecentlyRead/utils/types"
+import Title from "@/components/(frontend)/Title/Title"
 
 export default async function Homepage() {
-    const blogArticle: string = '<h1>Understanding React Server Components</h1> <p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p><p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p> <p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p> <h2>What did server-side rendering and React Suspense solve?</h2> <p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p> <p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p><p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p> <p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p><p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p> <h2>Why do we need Server Components?</h2> <p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p><p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p><p><a>React Server Components (RSCs)</a> augment the fundamentals of React beyond being a pure rendering library into incorporating data-fetching and remote client-server communication within the framework.</p><p>Below, we’ll walk you through why RSCs needed to be created, what they do best, and when to use them. We\'ll also touch on how Next.js eases and enhances the <a>RSC implementation details</a> through the App Router.</p>'
+    const featuredBlogs: FeaturedBlogsType[] = [
+        { id: "", tag: { label: "" }, title: "Understanding React Server Components", createdAt: new Date(), metrics: { likes: 17196, views: 4920292, comments: 1904 }, thumbnail: { alt: "", url: "https://github.com/bcd-kushal.png" }, description: "The study of Homo species is crucial for understanding human evolution. By examining fossils, tools, and other archaeological evidence, scientists can trace the development of physical and cultural traits that define modern humans." },
+        { id: "", tag: { label: "" }, title: "Understanding React Server Components", createdAt: new Date(), metrics: { likes: 17196, views: 4920292, comments: 1904 }, thumbnail: { alt: "", url: "https://github.com/bcd-kushal.png" }, description: "The study of Homo species is crucial for understanding human evolution. By examining fossils, tools, and other archaeological evidence, scientists can trace the development of physical and cultural traits that define modern humans." },
+        { id: "", tag: { label: "" }, title: "Understanding React Server Components", createdAt: new Date(), metrics: { likes: 17196, views: 4920292, comments: 1904 }, thumbnail: { alt: "", url: "https://github.com/bcd-kushal.png" }, description: "The study of Homo species is crucial for understanding human evolution. By examining fossils, tools, and other archaeological evidence, scientists can trace the development of physical and cultural traits that define modern humans." },
+        { id: "", tag: { label: "" }, title: "Understanding React Server Components", createdAt: new Date(), metrics: { likes: 17196, views: 4920292, comments: 1904 }, thumbnail: { alt: "", url: "https://github.com/bcd-kushal.png" }, description: "The study of Homo species is crucial for understanding human evolution. By examining fossils, tools, and other archaeological evidence, scientists can trace the development of physical and cultural traits that define modern humans." },
+        { id: "", tag: { label: "" }, title: "Understanding React Server Components", createdAt: new Date(), metrics: { likes: 17196, views: 4920292, comments: 1904 }, thumbnail: { alt: "", url: "https://github.com/bcd-kushal.png" }, description: "The study of Homo species is crucial for understanding human evolution. By examining fossils, tools, and other archaeological evidence, scientists can trace the development of physical and cultural traits that define modern humans." },
+    ]
+
+    const recentlyReadBlogs: RecentlyReadDataType = featuredBlogs
+
     return (
-        <>
-        <div className="flex gap-3 items-center justify-start *:text-xs mt-6 mb-4">
-            <span className="rounded-full p-1 px-3 bg-zinc-300 dark:bg-zinc-800">SEO blog</span>
-            <span className="text-zinc-700 dark:text-zinc-400">Friday, 14th June 2024</span>
+        <div className="flex flex-col gap-1 items-stretch justify-start min-h-screen px-3 min-[1200px]:px-0">
+            <CategoryTabs />
+            <Title config={{ label: "All posts", variant: "category", type: "text" }} />
+            <FeaturedBlogs featuredBlogs={featuredBlogs} />
+
+            <Title config={{ label: "Recently read", variant: "category", type: "text" }} />
+            <RecentlyRead data={recentlyReadBlogs} />
+
+            <Title config={{ label: "Latest", variant: "category", type: "text" }} />
+            <AllBlogs category="all" />
         </div>
-        <article dangerouslySetInnerHTML={{ __html: blogArticle }} className={styles.blogArticle} />
-        </>
     )
 }

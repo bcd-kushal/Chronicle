@@ -10,7 +10,7 @@ export default async function HomepageLayout({ children }: { children: ChildrenT
     return (
         <>
             <Header theme={theme} />
-            <div className="flex flex-col justify-start items-stretch max-w-[1200px] px-[12px] mt-4 mb-10 min-[1200px]:px-0 relative left-1/2 -translate-x-1/2"> {children} </div>
+            <div className="flex flex-col justify-start items-stretch max-w-[1200px] mt-4 mb-10 relative left-1/2 -translate-x-1/2"> {children} </div>
             <Footer />
         </>
     )
