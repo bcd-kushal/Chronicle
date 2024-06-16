@@ -2,6 +2,6 @@
 
 export default function ErrorPage() {
     return (
-        <div>An error occured</div>
+        <div className="px-3 min-[1200px]:px-0 ">An error occured</div>
     )
 }
