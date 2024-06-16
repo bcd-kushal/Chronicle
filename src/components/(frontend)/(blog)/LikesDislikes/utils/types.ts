@@ -1,0 +1,1 @@
+export type LikesDislikesType                       = { likes: number } & ({ isSelected: false } | { isSelected: true, selection: "like" | "dislike" })
