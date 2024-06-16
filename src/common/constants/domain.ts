@@ -1,0 +1,1 @@
+export const DOMAIN = process.env.PUBLIC_DOMAIN
