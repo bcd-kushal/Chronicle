@@ -9,9 +9,9 @@
 .blogArticle h2 {
     display: block;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 26px;
     line-height: 32px;
-    margin: 32px 0 14px ;
+    margin: 36px 0 16px ;
 }
 
 .blogArticle p {
@@ -27,4 +27,15 @@
 .blogArticle a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+@media (min-width:768px) {
+    .blogArticle p {
+        font-size: 18px;
+    }
+
+    .blogArticle h2 {
+        font-weight: 700;
+        font-size: 26px;
+    }
 }
