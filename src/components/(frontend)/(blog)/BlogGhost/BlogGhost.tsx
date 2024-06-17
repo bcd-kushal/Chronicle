@@ -16,7 +16,7 @@ export default function BlogGhost({ blog, page }: { blog: BlogAtomicDataDocument
                 }
             </div>
             <div className={`flex flex-col items-start justify-start ${page==="category" ? "gap-1 sm:gap-2 lg:gap-3" : "gap-2"}`}>
-                <span className={`${page==="category" ? "text-xl font-semibold lg:font-bold line-clamp-4" : "text-xl md:text-lg font-bold md:font-medium line-clamp-2 text-black/80 dark:text-white/80" } transition-colors duration-200 group-hover:text-blue-500`}>{blog.title}</span>
+                <span className={`${page==="category" ? "text-xl font-semibold lg:font-bold line-clamp-4" : "text-xl md:text-lg font-bold md:font-medium line-clamp-2 md:text-black/80 dark:md:text-white/80" } transition-colors duration-200 group-hover:text-blue-500`}>{blog.title}</span>
                 <span className={`${page==="category" ? "text-sm text-black/60 dark:text-white/60" : "text-sm md:text-xs text-black/45 dark:text-white/40" }`}>{moment(blog.createdAt).format(DATE_FORMAT.FULL)}</span>
             </div>
         </Link>

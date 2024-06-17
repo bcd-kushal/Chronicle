@@ -1,12 +1,12 @@
 const SELECTED_STYLES = {
     TEXT: 'text-blue-600',
     BG: 'bg-[#2563eb15] hover:bg-[#2563eb40]',
-    BORDER: 'border-blue-800'
+    BORDER: 'border-blue-500 dark:border-blue-800'
 }
 const DFEAULT_STYLES = {
     TEXT: 'text-black/70 dark:text-white/55 hover:text-white',
     BG: 'bg-transparent',
-    BORDER: 'border-black/20 dark:border-white/10'
+    BORDER: 'border-black/20 md:border-black/40 dark:border-white/10'
 }
 
 export const COMMON_STYLES              = 'flex items-center justify-center gap-2 text-[15px] border-[1.5px] cursor-pointer transition-all duration-300'

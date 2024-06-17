@@ -32,16 +32,7 @@ export default async function BlogArticle({ blogArticle, tag }: { blogArticle: s
             <main className="grid px-3 min-[1200px]:px-0 grid-cols-1 md:grid-cols-[auto_380px]">
                 <BlogTopHeading date={new Date()} tag={tag} title="Understanding React Server Components" />
                 <span></span>
-                <div>
-                    <article dangerouslySetInnerHTML={{ __html: blogArticle }} className={styles.blogArticle} />
-                    <div className="flex items-center justify-between gap-3 pt-10">
-                        <div className="flex items-center justify-start gap-3">
-                            <LikesDislikes config={{ isSelected: true, likes: 2004, selection: "like" }} type="expanded" />
-                            <Share className="" />
-                        </div>
-                        <span className="flex items-center justify-end gap-2 cursor-pointer text-black/60 dark:text-white/60 transition-all duration-300 hover:text-black dark:hover:text-white"><MessageCircleIcon height={18} width={18}/><span>Leave a Comment</span></span>
-                    </div>
-                </div>
+                <MainBlogArea blogArticle={blogArticle} />
                 <BlogMiscellaneousDetails date={new Date()} likes={2004} views={18390} relatedBlogs={relatedBlogs} />
             </main>
 
@@ -72,13 +63,13 @@ function BlogMiscellaneousDetails({ date, likes, views, relatedBlogs }: { date: 
             <span className="ml-8 mr-4 w-[1.5px] bg-black/10 dark:bg-white/10 hidden md:block" />
             <div className="flex flex-col justify-start gap-4 mt-12 pt-10 md:pt-0 md:border-none md:mt-0 border-t-[1.5px] border-white/15 md:pl-2">
 
-                <SideDataTemplate title="Info" gap={3}>
+                <SideDataTemplate title="Info" gap={'gap-3'}>
                     {blogInfo.map(({ key, value }, index) => (
                         <div className="grid grid-cols-[28px_auto] items-center text-sm text-black/80 dark:text-white/80" key={index}>{key}<span>{value}</span></div>
                     ))}
                 </SideDataTemplate>
 
-                <SideDataTemplate title="Related Blogs" gap={8}>
+                <SideDataTemplate title="Related Blogs" gap={'gap-6'}>
                     {relatedBlogs
                         .filter((_, index) => index < 3)
                         .map((blog, index) => (
@@ -88,5 +79,22 @@ function BlogMiscellaneousDetails({ date, likes, views, relatedBlogs }: { date: 
 
             </div>
         </section>
+    )
+}
+
+
+function MainBlogArea({ blogArticle }: { blogArticle: string }) {
+    return (
+        <div>
+            <article dangerouslySetInnerHTML={{ __html: blogArticle }} className={styles.blogArticle} />
+            <div className="flex items-center justify-between gap-3 pt-10">
+                <div className="flex items-center justify-start gap-1 md:gap-3">
+                    <LikesDislikes config={{ isSelected: true, likes: 2004, selection: "like" }} type="expanded" />
+                    <Favorite isSelected={false} className="hidden lg:block text-black/80 dark:text-white/80 transition-all duration-300 hover:text-black dark:hover:text-white" />
+                    <Share className="text-black/80 dark:text-white/80 transition-all duration-300 hover:text-black dark:hover:text-white" />
+                </div>
+                <span className="flex items-center justify-end gap-2 cursor-pointer text-black/80 dark:text-white/60 transition-all duration-300 hover:text-black dark:hover:text-white"><MessageCircleIcon height={18} width={18} /><span>Leave a Comment</span></span>
+            </div>
+        </div>
     )
 }
