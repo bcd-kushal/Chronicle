@@ -5,6 +5,7 @@ const config = {
   darkMode: "selector",
   content: [
     './pages/**/*.{ts,tsx}',
+    './common/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
@@ -72,13 +73,28 @@ const config = {
           to: { height: "0" },
         },
       },
+      gridAutoRows: {
+        'blog-head': 'minmax(300px, 1fr)',
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // @ts-ignore
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.webkit-box': {
+          display: '-webkit-box',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive']);
+    },
+  ],
 } satisfies Config
 
 export default config
