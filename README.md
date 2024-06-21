@@ -1,2 +1,5 @@
-# Chronicle
-Blogs site, inspiration by vercel blog
+# My Blogs
+
+https://blogs.kushalkumarsaha.com/
+
+- in production
