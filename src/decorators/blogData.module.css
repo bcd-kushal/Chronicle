@@ -11,7 +11,7 @@
     font-weight: 600;
     font-size: 26px;
     line-height: 32px;
-    margin: 36px 0 16px ;
+    padding: 36px 0 24px ;
 }
 
 .blogArticle p {
@@ -28,6 +28,7 @@
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+
 
 @media (min-width:768px) {
     .blogArticle p {
