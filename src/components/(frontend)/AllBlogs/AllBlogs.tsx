@@ -21,6 +21,5 @@ export default function AllBlogs({ category }: { category: string }) {
             Load more
         </div>
         </>
-        
     )
 }
