@@ -6,10 +6,10 @@ import { FooterLinksType } from "./utils/types";
 
 export default async function Footer() {
     const socialLinks: SocialLinkType[] = [
-        { label: < WhatsappSVG className="fill-zinc-500 group-hover:fill-black dark:group-hover:fill-white transition-colors duration-300" width={18} height={18} />, link: "https://wa.me" },
-        { label: <LinkedinIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} />, link: "https://linkedin.com" },
-        { label: <GlobeIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} />, link: "https://shubhamsharma.vercel.app" },
-        { label: <GithubIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} />, link: "https://github.com" },
+        { label: < WhatsappSVG className="fill-zinc-500 group-hover:fill-black dark:group-hover:fill-white transition-colors duration-300" width={18} height={18} name="whatsapp"/>,  link: "https://wa.me" },
+        { label: <LinkedinIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} name="linkedin"/>,  link: "https://linkedin.com" },
+        { label: <GlobeIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} name="portfolio" />,   link: "https://shubhamsharma.vercel.app" },
+        { label: <GithubIcon className="stroke-zinc-500 group-hover:stroke-black dark:group-hover:stroke-white transition-colors duration-300" width={18} height={18} name="github" />,     link: "https://github.com" },
     ]
 
     const footerLinks: FooterLinksType = [

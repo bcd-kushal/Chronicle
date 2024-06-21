@@ -8,7 +8,7 @@ export default function Search() {
     return (
         <Dialog>
             <DialogTrigger className="group flex items-center justify-center p-2 aspect-square transition-all duration-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg outline-none focus:outline-none">
-                <SearchIcon width={20} height={20} className="stroke-zinc-500 transition-colors duration-300 group-hover:stroke-black dark:group-hover:stroke-white" />
+                <SearchIcon width={20} height={20} className="stroke-zinc-500 transition-colors duration-300 group-hover:stroke-black dark:group-hover:stroke-white" name="search"/>
             </DialogTrigger>
 
             <DialogContent className="min-w-fit p-0 border-none top-1/4 sm:-translate-y-[18%]  max-w-[calc(100dvw_-_28px)] sm:max-w-[500px]">

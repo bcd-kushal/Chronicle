@@ -17,7 +17,7 @@ export default async function Header({ theme }: { theme: ThemeType }) {
                 {/* right side -------------------------- */}
                 <span className="flex items-center gap-2 justify-end">
                     <Search />
-                    <ThemeSwitch theme={theme}  />
+                    {/* <ThemeSwitch theme={theme}  /> */}
                 </span>
 
             </header>
