@@ -23,6 +23,7 @@
 ::-webkit-scrollbar-thumb { background: #4e4e4e70; }
 ::-webkit-scrollbar-thumb:hover { background: #4e4e4e; }
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
