@@ -5,6 +5,7 @@ import { useState } from "react"
 import Avatar from "../Avatar/Avatar"
 import CommentBubble from "../CommentBubble/CommentBubble"
 import { __emptyFunction__ } from "@/common/utils/__emptyFunction__"
+import Comment from "../../(blog)/Comment/Comment"
 
 export default function NewComment({ children, blogTitle, onCancel, handleComment, className }: CommentType) {
     const [openComment, setOpenComment] = useState<boolean>(false)
@@ -22,10 +23,7 @@ export default function NewComment({ children, blogTitle, onCancel, handleCommen
                     <span className="capitalize font-semibold text-2xl mt-2 truncate pr-8">{blogTitle.split("-").join(" ")}</span>
                     <span className="text-sm dark:text-zinc-500/90 mb-4">New comment</span>
 
-                    <section className="grid grid-cols-[45px_auto] gap-4">
-                        <Avatar link="https://github.com/bcd-kushal.png" alt="" dimensions={"[45px]"} />
-                        <CommentBubble config={{ textareaDisabled: false, textareaValue: newComment, handleInputChange: updateComment, placeholder: "Type a comment..." }} />
-                    </section>
+                    <Comment newComment={true} comment={newComment} placeholder="Type a comment..." onEdit={updateComment} replies={[]} likes={0} id="" createdAt={new Date()} reader={{ id: "", name: "Kushal Kumar" }} />
 
                     <div className="flex items-center justify-end gap-4 mt-4 *:py-3 *:px-5 *:rounded-lg *:text-sm *:cursor-pointer *:transition-all *:duration-300">
                         <span className="text-zinc-500 hover:underline" onClick={() => setOpenComment(prev => false)}>Cancel</span>

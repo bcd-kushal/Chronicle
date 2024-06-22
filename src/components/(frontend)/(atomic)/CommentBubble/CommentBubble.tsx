@@ -6,7 +6,7 @@ import { ClassNameType } from "@/common/types/types"
 export default function CommentBubble({ config, className }: { config: CommentBubbleType, className?: ClassNameType }) {
     return (
         <div className="flex flex-col">
-            <div className="bg-zinc-400 dark:bg-zinc-800 rounded-3xl rounded-ss-none px-4 pt-2.5 pb-3 relative">
+            <div className={`bg-zinc-400 dark:bg-zinc-800 rounded-3xl rounded-ss-none relative ${config.textareaDisabled ? "w-fit min-w-[210px] pl-4 pr-[18px] pt-2.5 pb-4" : "px-4 pt-2.5 pb-3"}`}>
                 {/* FRAGMENT ======================================== */}
                 <span className={`-z-10 absolute top-0 left-0 h-8 w-10 bg-zinc-400 dark:bg-zinc-800 -translate-x-2 ${styles.commentBoxFragment}`} />
 
