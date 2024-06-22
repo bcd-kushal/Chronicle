@@ -1,5 +1,7 @@
 import { AllBlogsType } from "./utils/types"
 import BlogGhost from "../(blog)/BlogGhost/BlogGhost"
+import LoadMore from "../(atomic)/LoadMore/LoadMore"
+import { __emptyFunction__ } from "@/common/utils/__emptyFunction__"
 
 export default function AllBlogs({ category }: { category: string }) {
     const allBlogs: AllBlogsType = [
@@ -17,9 +19,7 @@ export default function AllBlogs({ category }: { category: string }) {
                 <BlogGhost blog={blog} page="category" key={index} />
             ))}
         </section>
-        <div className="p-2 max-w-[370px] relative left-1/2 -translate-x-1/2 rounded-lg text-center bg-zinc-100 dark:bg-[#111] my-6 border-[1.5px] border-black/10 hover:border-black/30 text-black/50 hover:text-black/70 dark:border-white/10 dark:hover:border-white/20 dark:text-white/50 dark:hover:text-white dark:hover:bg-zinc-900 transition-all duration-300 cursor-pointer">
-            Load more
-        </div>
+        <LoadMore handleClick={__emptyFunction__} />
         </>
     )
 }
