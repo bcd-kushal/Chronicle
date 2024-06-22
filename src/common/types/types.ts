@@ -13,3 +13,7 @@ export type SSGBlogStaticParamType          = Array<{ blogId: string }>
 
 
 export type NextResponseType                = { status: boolean, data: any | null, count?: number } 
+
+
+
+export type AvatarShadeType                 = 'orange' | 'emerald' | 'sky' | 'fuchsia' | 'yellow'
