@@ -14,6 +14,8 @@ import { AUTHOR } from "@/common/constants/author"
 import { inThousands } from "@/common/utils/inThousands"
 import { __emptyFunction__ } from "@/common/utils/__emptyFunction__"
 import NewComment from "../../(atomic)/NewComment/NewComment"
+import Comment from "../Comment/Comment"
+import LoadMore from "../../(atomic)/LoadMore/LoadMore"
 
 export default async function BlogArticle({ blogArticle, tag }: { blogArticle: string, tag: string }) {
     const relatedBlogs: BlogAtomicDataDocument[] = [
@@ -104,6 +106,25 @@ function MainBlogArea({ blogArticle, tag }: { blogArticle: string, tag: string }
                     </span>
                 </NewComment>
             </div>
+            <CommentsSection />
+
         </div>
+    )
+}
+
+function CommentsSection() {
+    return (
+        <section className="pt-10 pb-5 flex flex-col justify-start gap-6">
+            <span className="text-xl md:text-2xl font-semibold">Comments</span>
+            <div className="flex flex-col justify-start gap-5">
+                {
+                    Array.from({ length: 4 }).map((_, index) => (
+                        <Comment newComment={false} comment="Scrumptious post!" createdAt={new Date()} id="" likes={17} reader={{ id: "", name: "" }} replies={[]} key={index} />
+                    ))
+                }
+            </div>
+            <LoadMore handleClick={__emptyFunction__} />
+
+        </section>
     )
 }
