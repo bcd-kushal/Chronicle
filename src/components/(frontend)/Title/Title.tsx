@@ -16,7 +16,7 @@ export default function Title({ config }: { config: TitleType }) {
         return <h1 className={TITLE_STYLES.blog}>{label}</h1>
     }
 
-    else {  // CATEGORY ==========================================
+    else if (variant === "category") {  // CATEGORY ==========================================
         if (type === "link")
             return (
                 <Link href={config.href} target={config.target === "new-tab" ? "_blank" : "_self"} prefetch className={TITLE_STYLES.category}>
@@ -26,6 +26,19 @@ export default function Title({ config }: { config: TitleType }) {
 
         return (
             <div className={TITLE_STYLES.category}>{label}</div>
+        )
+    }
+
+    else {  // SETTINGS PANEL ==========================================
+        if (type === "link")
+            return (
+                <Link href={config.href} target={config.target === "new-tab" ? "_blank" : "_self"} prefetch className={TITLE_STYLES.settings}>
+                    {label}
+                </Link>
+            )
+
+        return (
+            <div className={TITLE_STYLES.settings}>{label}</div>
         )
     }
 }
