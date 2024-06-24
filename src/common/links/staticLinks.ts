@@ -1,10 +1,15 @@
-const ADMIN_ROOT = `/${process.env.ADMIN_ROOT}`
+const ADMIN_ROOT = `/${process.env.NEXT_PUBLIC_ADMIN_ROOT}`
 
 export const LINKS = {
     HOMEPAGE: '/',
 
-    VIEWER_PROFILE: '/u/profile',
-    VIEWER_SETTINGS: '/u/settings',
+    VIEWER : {
+        FAVORITES: '/u/favorites',
+        COMMENTS: '/u/comments',
+        LIKES: '/u/likes',
+        
+        SETTINGS: '/u/settings',
+    },
 
     ADMIN: {
         _DEFAULT: `${ADMIN_ROOT}/blogs`,

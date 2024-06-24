@@ -17,3 +17,11 @@ export type NextResponseType                = { status: boolean, data: any | nul
 
 
 export type AvatarShadeType                 = 'orange' | 'emerald' | 'sky' | 'fuchsia' | 'yellow'
+
+
+
+
+export type LinkListType                    = {
+                                                top: { label: string, svg: JSX.Element, link: string }[],
+                                                bottom: { label: string, svg: JSX.Element, link: string }[]
+                                            }
