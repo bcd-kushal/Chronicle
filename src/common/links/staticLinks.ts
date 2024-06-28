@@ -22,3 +22,7 @@ export const LINKS = {
         ANALYTICS: `${ADMIN_ROOT}/analytics`,
     }
 }
+
+export const DB_ROUTE = {
+    BLOGS: `./src/server/db/data/blogs.db`
+}
